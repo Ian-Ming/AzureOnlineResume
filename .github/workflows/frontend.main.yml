@@ -20,7 +20,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name azureresumeiam --account-key DHY6lUvEzUrIvzOc8ls/TzDvsb5HOk2Hu6EjEQR/UF4VdXHQS41aW1IotEQ1uWqfqBrIBozAQ/yc+AStviunOw== --auth-mode key -d '$web' -s frontend/
+            az storage blob upload-batch --account-name azureresumeiam --account-key ${{ secrets.AZURE_STORAGE_KEY }} --auth-mode key -d '$web' -s frontend/
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
