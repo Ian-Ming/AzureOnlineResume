@@ -36,6 +36,13 @@ jobs:
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api'
         dotnet build --configuration Release --output ./output
         popd
+    - name: 'List Files in Output Directory'
+      shell: pwsh
+      run: |
+         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/api'
+         dir ./output
+         popd    
+        
     - name: 'Run unit test'
       shell: pwsh
       run: |
